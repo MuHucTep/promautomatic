@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -7,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', path='css/style.css') }}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
 
@@ -53,7 +54,7 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h2>Автоматизация технологических процессов (АСУ ТП)</h2>
+                <h2>Автоматизация technological процессов (АСУ ТП)</h2>
                 <p>Разработка, проектирование и внедрение комплексных решений для управления производством и модернизации оборудования любой сложности.</p>
                 <div class="hero-buttons">
                     <a href="#" class="btn-primary">Наши услуги</a>
@@ -71,92 +72,92 @@
             <div class="services-grid">
                 
                 <div class="service-card">
-                <div class="service-img">
-                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=400" alt="Сборка шкафов управления" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=400" alt="Сборка шкафов управления" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    </div>
+                    <div class="service-info">
+                        <h4>Сборка шкафов управления</h4>
+                        <p>Проектирование и сборка силовых шкафов и шкафов автоматики на базе сертифицированных и проверенных комплектующих.</p>
+                        <a href="#" class="service-link">Подробнее &rarr;</a>
+                    </div>
                 </div>
-                <div class="service-info">
-                    <h4>Сборка шкафов управления</h4>
-                    <p>Проектирование и сборка силовых шкафов и шкафов автоматики на базе сертифицированных и проверенных комплектующих.</p>
-                    <a href="#" class="service-link">Подробнее &rarr;</a>
+     
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=400" alt="Программирование ПЛК, SCADA, HMI" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    </div>
+                    <div class="service-info">
+                        <h4>Программирование ПЛК, SCADA, HMI</h4>
+                        <p>Разработка алгоритмов управления, создание интуитивных интерфейсов оператора и систем диспетчеризации верхнего уровня.</p>
+                        <a href="#" class="service-link">Подробнее &rarr;</a>
+                    </div>
                 </div>
-            </div>
- 
-            <div class="service-card">
-                <div class="service-img">
-                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=400" alt="Программирование ПЛК, SCADA, HMI" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+     
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=400" alt="Разработка и проектирование АСУ ТП" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    </div>
+                    <div class="service-info">
+                        <h4>Разработка и проектирование АСУ ТП</h4>
+                        <p>Создание комплексных систем автоматизации под ключ: от предпроектного обследования до внедрения готового решения.</p>
+                        <a href="#" class="service-link">Подробнее &rarr;</a>
+                    </div>
                 </div>
-                <div class="service-info">
-                    <h4>Программирование ПЛК, SCADA, HMI</h4>
-                    <p>Разработка алгоритмов управления, создание интуитивных интерфейсов оператора и систем диспетчеризации верхнего уровня.</p>
-                    <a href="#" class="service-link">Подробнее &rarr;</a>
+     
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80&w=400" alt="Ремонт и модернизация оборудования" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    </div>
+                    <div class="service-info">
+                        <h4>Ремонт и модернизация оборудования</h4>
+                        <p>Обновление устаревших систем управления, замена компонентов и восстановление работоспособности станков и линий.</p>
+                        <a href="#" class="service-link">Подробнее &rarr;</a>
+                    </div>
                 </div>
-            </div>
- 
-            <div class="service-card">
-                <div class="service-img">
-                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=400" alt="Разработка и проектирование АСУ ТП" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+     
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&q=80&w=400" alt="Сервисное обслуживание производства" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    </div>
+                    <div class="service-info">
+                        <h4>Сервисное обслуживание производства</h4>
+                        <p>Регулярный ТО, планово-предупредительные работы и оперативный выезд инженеров для минимизации простоев предприятия.</p>
+                        <a href="#" class="service-link">Подробнее &rarr;</a>
+                    </div>
                 </div>
-                <div class="service-info">
-                    <h4>Разработка и проектирование АСУ ТП</h4>
-                    <p>Создание комплексных систем автоматизации под ключ: от предпроектного обследования до внедрения готового решения.</p>
-                    <a href="#" class="service-link">Подробнее &rarr;</a>
+     
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=400" alt="Технический аудит и диагностика" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    </div>
+                    <div class="service-info">
+                        <h4>Технический аудит и диагностика</h4>
+                        <p>Комплексный анализ текущего состояния автоматизации, выявление уязвимостей и разработка рекомендаций по оптимизации.</p>
+                        <a href="#" class="service-link">Подробнее &rarr;</a>
+                    </div>
                 </div>
-            </div>
- 
-            <div class="service-card">
-                <div class="service-img">
-                    <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80&w=400" alt="Ремонт и модернизация оборудования" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+     
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1535557142533-b5e1cc6e2a5d?auto=format&fit=crop&q=80&w=400" alt="Поставка комплектующих для АСУ ТП" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    </div>
+                    <div class="service-info">
+                        <h4>Поставка комплектующих для АСУ ТП</h4>
+                        <p>Подбор и снабжение производства качественными компонентами: от датчиков и контроллеров до кабельной продукции.</p>
+                        <a href="#" class="service-link">Подробнее &rarr;</a>
+                    </div>
                 </div>
-                <div class="service-info">
-                    <h4>Ремонт и модернизация оборудования</h4>
-                    <p>Обновление устаревших систем управления, замена компонентов и восстановление работоспособности станков и линий.</p>
-                    <a href="#" class="service-link">Подробнее &rarr;</a>
+     
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=400" alt="Монтаж и пусконаладочные работы" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    </div>
+                    <div class="service-info">
+                        <h4>Монтаж и пусконаладочные работы</h4>
+                        <p>Проведение электромонтажа, проверка сигналов, тонкая настройка оборудования и запуск системы в промышленную эксплуатацию.</p>
+                        <a href="#" class="service-link">Подробнее &rarr;</a>
+                    </div>
                 </div>
-            </div>
- 
-            <div class="service-card">
-                <div class="service-img">
-                    <img src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&q=80&w=400" alt="Сервисное обслуживание производства" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-                </div>
-                <div class="service-info">
-                    <h4>Сервисное обслуживание производства</h4>
-                    <p>Регулярный ТО, планово-предупредительные работы и оперативный выезд инженеров для минимизации простоев предприятия.</p>
-                    <a href="#" class="service-link">Подробнее &rarr;</a>
-                </div>
-            </div>
- 
-            <div class="service-card">
-                <div class="service-img">
-                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=400" alt="Технический аудит и диагностика" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-                </div>
-                <div class="service-info">
-                    <h4>Технический аудит и диагностика</h4>
-                    <p>Комплексный анализ текущего состояния автоматизации, выявление уязвимостей и разработка рекомендаций по оптимизации.</p>
-                    <a href="#" class="service-link">Подробнее &rarr;</a>
-                </div>
-            </div>
- 
-            <div class="service-card">
-                <div class="service-img">
-                    <img src="https://images.unsplash.com/photo-1535557142533-b5e1cc6e2a5d?auto=format&fit=crop&q=80&w=400" alt="Поставка комплектующих для АСУ ТП" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-                </div>
-                <div class="service-info">
-                    <h4>Поставка комплектующих для АСУ ТП</h4>
-                    <p>Подбор и снабжение производства качественными компонентами: от датчиков и контроллеров до кабельной продукции.</p>
-                    <a href="#" class="service-link">Подробнее &rarr;</a>
-                </div>
-            </div>
- 
-            <div class="service-card">
-                <div class="service-img">
-                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=400" alt="Монтаж и пусконаладочные работы" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-                </div>
-                <div class="service-info">
-                    <h4>Монтаж и пусконаладочные работы</h4>
-                    <p>Проведение электромонтажа, проверка сигналов, тонкая настройка оборудования и запуск системы в промышленную эксплуатацию.</p>
-                    <a href="#" class="service-link">Подробнее &rarr;</a>
-                </div>
-            </div>
 
             </div>
         </div>
@@ -280,70 +281,4 @@
             <div class="features-grid">
                 <div class="feature-item">
                     <h4>Телефон</h4>
-                    <p><a href="">+996 000 00-00-00</a></p>
-                </div>
-                <div class="feature-item">
-                    <h4>Email</h4>
-                    <p><a href="mailto:info@promautomatic.ru">info@promautomatic.ru</a></p>
-                </div>
-                <div class="feature-item">
-                    <h4>Адрес</h4>
-                    <p>г. Бишкек, проспект Байзакова, 0</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container">
-            <div class="section-title">
-                <h3>Почему выбирают нас</h3>
-            </div>
-            <div class="features-grid">
-                <div class="feature-item">
-                    <h4>Индивидуальный подход</h4>
-                    <p>Почти все наши разработки уникальны. Мы регулярно решаем нестандартные инженерные задачи под конкретные требования заказчика.</p>
-                </div>
-                <div class="feature-item">
-                    <h4>Опытные инженеры</h4>
-                    <p>Наши специалисты обладают профильным техническим образованием и многолетним опытом в сфере промышленной автоматизации.</p>
-                </div>
-                <div class="feature-item">
-                    <h4>Надежная база</h4>
-                    <p>Мы предлагаем проверенные решения на компонентах ведущих российских, китайских и мировых производителей.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h5>О компании</h5>
-                    <p>ООО «Промышленная Автоматизация» занимается комплексным инжинирингом, интеграцией систем АСУ ТП и промышленной роботизацией с 2006 года.</p>
-                </div>
-                <div class="footer-col">
-                    <h5>Услуги</h5>
-                    <ul>
-                        <li><a href="#">Проектирование АСУ ТП</a></li>
-                        <li><a href="#">Промышленные роботы</a></li>
-                        <li><a href="#">Сборка шкафов автоматики</a></li>
-                        <li><a href="#">Программирование ПЛК</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h5>Контакты</h5>
-                    <p>Адрес: (Адрес)</p>
-                    <p>Тел: (Номер телефона)</p>
-                    <p>Email: (Электронная почта)</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 ООО «Промышленная Автоматизация». Все права защищены.</p>
-            </div>
-        </div>
-    </footer>
-
-</body>
-</html>
+                    <p><a href="">+996 000 00-00-0
