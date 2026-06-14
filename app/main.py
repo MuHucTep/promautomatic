@@ -8,11 +8,13 @@ from a2wsgi import ASGIMiddleware
 
 app = FastAPI()
 
+# Переменная BASE_DIR указывает на /home/MuHucTep/promautomatic/app
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 STATIC_DIR = os.path.join(BASE_DIR, "static")
 TEMPLATES_DIR = os.path.join(BASE_DIR, "templates")
 
+# Используем ГОТОВЫЕ абсолютные пути вместо текстовых строк "app/static"
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 templates = Jinja2Templates(directory=TEMPLATES_DIR)
 
