@@ -4,6 +4,7 @@ from fastapi.responses import HTMLResponse
 from fastapi.requests import Request
 from fastapi.staticfiles import StaticFiles
 import uvicorn
+from a2wsgi import ASGIMiddleware
 
 app = FastAPI()
 
@@ -19,6 +20,8 @@ async def root(request: Request):
             'request': request,
         }
     )
+
+wsgi_app = ASGIMiddleware(app)
 
 if __name__ == "__main__":
     uvicorn.run('main:app', host='localhost', port=8000, reload=True)
