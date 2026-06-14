@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='css/style.css') }}">
 </head>
 <body>
 
@@ -72,7 +72,7 @@
                 
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="{{ url_for('static', filename='images/cabinet_control.jpg') }}" alt="Сборка шкафов управления" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                        <img src="{{ url_for('static', path='images/control_cabinets.jpg') }}" alt="Сборка шкафов управления" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                     </div>
                     <div class="service-info">
                         <h4>Сборка шкафов управления</h4>
@@ -83,7 +83,7 @@
 
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="{{ url_for('static', filename='images/programming_SCADA_PLC_HMI.jpg') }}" alt="Программирование ПЛК, SCADA, HMI" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                        <img src="{{ url_for('static', path='images/programming_SCADA_PLC_HMI.jpg') }}" alt="Программирование ПЛК, SCADA, HMI" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                     </div>
                     <div class="service-info">
                         <h4>Программирование ПЛК, SCADA, HMI</h4>
