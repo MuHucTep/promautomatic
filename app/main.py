@@ -3,25 +3,25 @@ from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse
 from fastapi.requests import Request
 from fastapi.staticfiles import StaticFiles
-import uvicorn
+import os
 from a2wsgi import ASGIMiddleware
 
 app = FastAPI()
 
-app.mount("/static", StaticFiles(directory="app/static"), name="static")
-templates = Jinja2Templates(directory="app/templates")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+STATIC_DIR = os.path.join(BASE_DIR, "static")
+TEMPLATES_DIR = os.path.join(BASE_DIR, "templates")
+
+app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
+templates = Jinja2Templates(directory=TEMPLATES_DIR)
 
 @app.get('/', response_class=HTMLResponse)
 async def root(request: Request):
     return templates.TemplateResponse(
         request=request,
         name='index.html',
-        context={
-            'request': request,
-        }
+        context={'request': request}
     )
 
 wsgi_app = ASGIMiddleware(app)
-
-if __name__ == "__main__":
-    uvicorn.run('main:app', host='localhost', port=8000, reload=True)
