@@ -1,9 +1,14 @@
+html {
+    scroll-behavior: smooth; /* Плавный скролл при переходе по якорям */
+}
+
 /* Общие стили и сброс */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
 body {
     font-family: 'Roboto', sans-serif;
     color: #333;
@@ -322,7 +327,7 @@ ul {
     letter-spacing: 0.5px;
 }
 .footer-col ul li {
-    margin-bottom: 12px; /* Чуть увеличили расстояние между ссылками */
+    margin-bottom: 12px;
 }
 .footer-col ul li a {
     display: inline-block;
@@ -342,8 +347,19 @@ ul {
     font-size: 13px;
 }
 
+.fade-in-bottom {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: opacity, transform; /* Оптимизация производительности */
+}
 
-/* --- ТЕПЕРЬ ВСЯ МАГИЯ АДАПТИВНОСТИ ТУТ --- */
+/* Конечное состояние: элементы возвращаются на свое место и становятся видимыми */
+.fade-in-bottom.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 
 @media (max-width: 768px) {
     .section {
@@ -363,7 +379,7 @@ ul {
     }
     
     .btn-callback {
-        width: 100%; /* Кнопка во всю ширину экрана — стандарт мобайла */
+        width: 100%; /* Кнопка во всю ширину экрана */
         max-width: 320px;
     }
 
@@ -387,10 +403,10 @@ ul {
     /* Главный баннер */
     .hero {
         padding: 60px 0;
-        text-align: center; /* Центрируем текст для баланса */
+        text-align: center;
     }
     .hero h2 {
-        font-size: 28px; /* Уменьшаем гигантский заголовок */
+        font-size: 28px;
     }
     .hero p {
         font-size: 16px;
@@ -410,7 +426,7 @@ ul {
     
     /* Футер */
     .footer-grid {
-        text-align: center; /* Центрируем контент футера */
+        text-align: center;
         gap: 25px;
     }
     .footer-bottom {
