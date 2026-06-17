@@ -15,7 +15,7 @@ dp = Dispatcher()
 @sync_to_async
 def get_or_create_user(user_id, username):
     obj, created = TelegramUser.objects.get_or_create(
-        user_id=user_id,
+        user_id = user_id,
         defaults={'username': username}
     )
     return obj, created
