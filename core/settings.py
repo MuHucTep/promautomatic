@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'app.apps.AppConfig',
-    'tg_bot_app',
 ]
 
 MIDDLEWARE = [
