@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-ajh#8r^poezf6+a1j)=csd@@m0rr-zoau9_b2gx1q#tyj77p4*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'MuHucTep.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'MuHucTep.pythonanywhere.com', '0.0.0.0']
 
 
 # Application definition
@@ -78,17 +78,6 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        # 'ENGINE': 'django.db.backends.postgresql',
-        # 'NAME': DB_NAME,
-        # 'USER': DB_USER,
-        # 'PASSWORD': DB_PASSWORD,
-        # 'HOST': DB_HOST,
-        # 'PORT': DB_PORT,
-
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
 }
 
 
