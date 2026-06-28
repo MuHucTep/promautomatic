@@ -1,57 +1,9 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Промышленная Автоматизация | АСУ ТП и Робототехника</title>
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body>
 
-    <header class="header">
-        <div class="container">
-            <div class="header-top">
-                <div class="logo-area">
-                    <div class="logo-icon">ПА</div>
-                    <div class="logo-text">
-                        <h1>ПромАвтоматика</h1>
-                        <p>Инжиниринг и системная интеграция АСУ ТП</p>
-                    </div>
-                </div>
-                <div class="header-contacts">
-                    <div class="contact-item">
-                        <span>Телефон в Бишкеке</span>
-                        <a href="tel:+996557757617">+996 557 757 617</a>
-                    </div>
-                    <div class="contact-item">
-                        <span>Электронная почта</span>
-                        <a href="mailto:info@promautomatic.kg">info@promautomatic.kg</a>
-                    </div>
-                    <a href="#contacts"><button class="btn-callback">Оставить заявку</button></a>
-                </div>
-            </div>
-        </div>
-        
-        <nav class="nav-bar">
-            <div class="container">
-                <ul class="nav-list">
-                    <li class="active"><a href="#home">Главная</a></li>
-                    <li><a href="#services">Услуги</a></li>
-                    <li><a href="#projects">Проекты</a></li>
-                    <li><a href="#partners">Партнёры</a></li>
-                    <li><a href="#components">Комплектующие</a></li>
-                    <li><a href="#about">О компании</a></li>
-                    <li><a href="#contacts">Контакты</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+{% block nav_home %}class="active"{% endblock %}
 
+{% block content %}
     <section id="home" class="hero fade-in-bottom">
         <div class="container">
             <div class="hero-content">
@@ -71,7 +23,7 @@
                 <h3>Наши услуги</h3>
             </div>
             <div class="services-grid">
-                
+
                 <div class="service-card">
                     <div class="service-img">
                         <img src="{% static 'images/сшу.jpg' %}" alt="Сборка шкафов управления" style="width: 100%; height: 100%; object-fit: cover; display: block;">
@@ -82,7 +34,7 @@
                         <a href="#" class="service-link">Подробнее &rarr;</a>
                     </div>
                 </div>
-     
+
                 <div class="service-card">
                     <div class="service-img">
                         <img src="{% static 'images/scada.jpg' %}" alt="Программирование ПЛК, SCADA, HMI" style="width: 100%; height: 100%; object-fit: cover; display: block;">
@@ -93,7 +45,7 @@
                         <a href="#" class="service-link">Подробнее &rarr;</a>
                     </div>
                 </div>
-     
+
                 <div class="service-card">
                     <div class="service-img">
                         <img src="{% static 'images/асутп.jpg' %}" alt="Разработка и проектирование АСУ ТП" style="width: 100%; height: 100%; object-fit: cover; display: block;">
@@ -104,7 +56,7 @@
                         <a href="#" class="service-link">Подробнее &rarr;</a>
                     </div>
                 </div>
-     
+
                 <div class="service-card">
                     <div class="service-img">
                         <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80&w=400" alt="Ремонт и модернизация оборудования" style="width: 100%; height: 100%; object-fit: cover; display: block;">
@@ -115,7 +67,7 @@
                         <a href="#" class="service-link">Подробнее &rarr;</a>
                     </div>
                 </div>
-     
+
                 <div class="service-card">
                     <div class="service-img">
                         <img src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&q=80&w=400" alt="Сервисное обслуживание производства" style="width: 100%; height: 100%; object-fit: cover; display: block;">
@@ -126,7 +78,7 @@
                         <a href="#" class="service-link">Подробнее &rarr;</a>
                     </div>
                 </div>
-     
+
                 <div class="service-card">
                     <div class="service-img">
                         <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=400" alt="Технический аудит и диагностика" style="width: 100%; height: 100%; object-fit: cover; display: block;">
@@ -137,7 +89,7 @@
                         <a href="#" class="service-link">Подробнее &rarr;</a>
                     </div>
                 </div>
-     
+
                 <div class="service-card">
                     <div class="service-img">
                         <img src="https://images.unsplash.com/photo-1535557142533-b5e1cc6e2a5d?auto=format&fit=crop&q=80&w=400" alt="Поставка комплектующих для АСУ ТП" style="width: 100%; height: 100%; object-fit: cover; display: block;">
@@ -148,7 +100,7 @@
                         <a href="#" class="service-link">Подробнее &rarr;</a>
                     </div>
                 </div>
-     
+
                 <div class="service-card">
                     <div class="service-img">
                         <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=400" alt="Монтаж и пусконаладочные работы" style="width: 100%; height: 100%; object-fit: cover; display: block;">
@@ -174,8 +126,8 @@
                     {% for project in projects %}
                     <div class="service-card">
                         <div class="service-img">
-                            {% if project.get_image_url %}
-                                <img src="{{ project.get_image_url }}" alt="{{ project.title }}" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                            {% if project.preview_image %}
+                                <img src="{{ project.preview_image }}" alt="{{ project.title }}" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                             {% else %}
                                 <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=400" alt="{{ project.title }}" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                             {% endif %}
@@ -189,12 +141,24 @@
                     {% endfor %}
                 {% else %}
                     <div class="service-card">
-                        <div class="service-img">
-                            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=400" alt="Проекты" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-                        </div>
+                        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=400');"></div>
                         <div class="service-info">
-                            <h4>Проекты пока не добавлены на страницу</h4>
-                            <p>В будущем сюда будут добавляться проекты, их описания и медиа-материалы</p>
+                            <h4>Автоматизация производственной линии</h4>
+                            <p>Внедрение комплексной системы управления для крупного предприятия с высокой производительностью.</p>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&q=80&w=400');"></div>
+                        <div class="service-info">
+                            <h4>Модернизация системы АСУ ТП</h4>
+                            <p>Обновление программного обеспечения и аппаратной части для повышения надежности и контроля.</p>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=400');"></div>
+                        <div class="service-info">
+                            <h4>Интеграция роботизированных ячеек</h4>
+                            <p>Создание безопасных и эффективных ячеек для сборочных и упаковочных процессов.</p>
                         </div>
                     </div>
                 {% endif %}
@@ -298,65 +262,4 @@
             </div>
         </div>
     </section>
-
-    <footer class="footer fade-in-bottom">
-        <div class="container"> <div class="footer-grid">
-            
-            <div class="footer-col">
-                <h5>О нас</h5>
-                <p>Мы создаем качественные архитектурные решения и помогаем производству расти. Ваш успех — наш главный приоритет.</p>
-                <p>Любой каприз за ваши деньги!</p>
-            </div>
-
-            <div class="footer-col">
-                <h5>Навигация</h5>
-                <ul>
-                    <li class="active"><a href="#home">Главная</a></li>
-                    <li><a href="#services">Услуги</a></li>
-                    <li><a href="#projects">Проекты</a></li>
-                    <li><a href="#partners">Партнёры</a></li>
-                    <li><a href="#components">Комплектующие</a></li>
-                    <li><a href="#about">О компании</a></li>
-                    <li><a href="#contacts">Контакты</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h5>Контакты</h5>
-                <ul>
-                    <li><a href="tel:+996557757617">+996 557 757 617</a></li>
-                    <li><a href="mailto:info@promautomatic.kg">info@promautomatic.kg</a></li>
-                    <li>г. Бишкек, ул. Гагарина 268/1</li>
-                </ul>
-            </div>
-
-            <div class="footer-col footer-map-col">
-                <h5>Мы на карте</h5>
-                <div class="map-container">
-                    <iframe src="https://yandex.ru/map-widget/v1/?ll=74.542157%2C42.851902&z=14&pt=74.542157%2C42.851902,vkm" 
-                            width="100%" 
-                            height="300" 
-                            frameborder="0" 
-                            allowfullscreen="true" 
-                            style="position:relative; border-radius: 4px; border: 0;">
-                    </iframe>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="footer-bottom">
-            <div class="copyright">
-                &copy; 2026 Ваша Компания. Все права защищены.
-            </div>
-            <div class="footer-socials">
-                <a href="#" style="margin-left: 15px; color: inherit;">Telegram</a>
-                <a href="#" style="margin-left: 15px; color: inherit;">VK</a>
-                <a href="#" style="margin-left: 15px; color: inherit;">GitHub</a>
-            </div>
-        </div>
-
-        </div>
-    </footer>
-    <script src="{% static 'js/script.js' %}"></script>
-</body>
+{% endblock %}

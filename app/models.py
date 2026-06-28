@@ -3,8 +3,8 @@ from django.db import models
 class Project(models.Model):
     title = models.CharField(max_length=200, verbose_name="Название")
     description = models.TextField(verbose_name="Описание")
+    preview_image = models.ImageField(upload_to='projects/', blank=True, null=True, verbose_name="Превью изображения")
     image = models.ImageField(upload_to='projects/', blank=True, null=True, verbose_name="Изображение")
-    image_url = models.URLField(blank=True, null=True, verbose_name="URL изображения")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Дата обновления")
     is_active = models.BooleanField(default=True, verbose_name="Активен")
@@ -20,4 +20,5 @@ class Project(models.Model):
     def get_image_url(self):
         if self.image:
             return self.image.url
-        return self.image_url
+        else:
+            return None
