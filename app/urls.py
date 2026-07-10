@@ -5,3 +5,5 @@ urlpatterns = [
     path('', root_handler, name='root'),
     path('projects/<int:pk>/', project_detail, name='project_detail'),
 ]
+
+handler404 = 'page_not_found'

@@ -12,3 +12,6 @@ def projects_list(request):
 def project_detail(request, pk):
     project = get_object_or_404(Project, pk=pk, is_active=True)
     return render(request, 'projects/project_detail.html', {'project': project})
+
+def page_not_found(request, exeption):
+    return render(request, '404.html', status=404)
