@@ -1,8 +1,7 @@
 html {
-    scroll-behavior: smooth; /* Плавный скролл при переходе по якорям */
+    scroll-behavior: smooth;
 }
 
-/* Общие стили и сброс */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -14,25 +13,25 @@ body {
     color: #333;
     line-height: 1.6;
     background-color: #f9f9f9;
-    /* Улучшает рендеринг шрифтов на мобильных устройствах */
-    -webkit-font-smoothing: antialiased; 
+    -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 a {
     text-decoration: none;
     color: inherit;
 }
+
 ul {
     list-style: none;
 }
+
 .container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 16px; /* Чуть уменьшили для мобильных, чтобы сэкономить экран */
+    padding: 0 16px;
 }
 
-/* Шапка сайта */
 .header {
     background-color: #fff;
     border-bottom: 1px solid #eaeaea;
@@ -64,13 +63,12 @@ ul {
     font-weight: 700;
     font-size: 20px;
     border-radius: 4px;
-    flex-shrink: 0; /* Иконка не сожмется на узких экранах */
+    flex-shrink: 0;
 }
 .logo-text h1 {
     font-size: 18px;
     font-weight: 700;
     color: #222;
-    text-transform: uppercase;
     letter-spacing: 0.5px;
     line-height: 1.2;
 }
@@ -82,7 +80,7 @@ ul {
     display: flex;
     gap: 24px;
     align-items: center;
-    flex-wrap: wrap; /* Позволяет контактам красиво переноситься */
+    flex-wrap: wrap;
 }
 .contact-item {
     font-size: 14px;
@@ -98,7 +96,7 @@ ul {
     color: #222;
     transition: color 0.2s;
     display: inline-block;
-    padding: 4px 0; /* Увеличиваем область клика */
+    padding: 4px 0;
 }
 .contact-item a:hover {
     color: #0056b3;
@@ -106,7 +104,7 @@ ul {
 .btn-callback {
     background-color: #0056b3;
     color: #fff;
-    padding: 12px 20px; /* Увеличена высота для удобства тапа */
+    padding: 12px 20px;
     border-radius: 4px;
     font-size: 14px;
     font-weight: 500;
@@ -118,13 +116,27 @@ ul {
     background-color: #004085;
 }
 
-/* Навигация */
 .nav-bar {
     background-color: #222;
+    position: relative;
+}
+.mobile-menu-toggle {
+    display: none;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    padding: 16px 20px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+}
+.mobile-menu-toggle:hover {
+    background-color: #333;
 }
 .nav-list {
     display: flex;
-    flex-wrap: wrap; /* Позволяет меню не ломать верстку на планшетах */
+    flex-wrap: wrap;
 }
 .nav-list li {
     flex-grow: 1;
@@ -132,7 +144,7 @@ ul {
 }
 .nav-list li a {
     display: block;
-    padding: 16px 20px; /* Идеальный размер для нажатия пальцем */
+    padding: 16px 20px;
     color: #ddd;
     font-size: 14px;
     font-weight: 500;
@@ -144,7 +156,6 @@ ul {
     color: #fff;
 }
 
-/* Главный баннер (Hero) */
 .hero {
     background: linear-gradient(rgba(0, 40, 85, 0.85), rgba(0, 20, 40, 0.9)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200') no-repeat center center/cover;
     color: #fff;
@@ -173,7 +184,7 @@ ul {
 }
 .btn-primary, .btn-secondary {
     display: inline-block;
-    padding: 14px 28px; /* Удобный размер для мобильных кнопок */
+    padding: 14px 28px;
     border-radius: 4px;
     font-weight: 500;
     text-align: center;
@@ -195,9 +206,8 @@ ul {
     color: #222;
 }
 
-/* Секции */
 .section {
-    padding: 60px 0; /* Чуть уменьшили вертикальные отступы на экранах по умолчанию */
+    padding: 60px 0;
 }
 .section-bg {
     background-color: #fff;
@@ -224,7 +234,6 @@ ul {
     background-color: #0056b3;
 }
 
-/* Сетка услуг */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -240,8 +249,6 @@ ul {
     flex-direction: column;
 }
 
-/* На мобильных устройствах ховер-эффект сдвига вверх (translateY) 
-   может дергаться при скролле пальцем, поэтому лучше оставить его для десктопов */
 @media (min-width: 769px) {
     .service-card:hover {
         transform: translateY(-5px);
@@ -280,10 +287,9 @@ ul {
     display: inline-flex;
     align-items: center;
     gap: 5px;
-    padding: 8px 0; /* Проще попасть пальцем */
+    padding: 8px 0;
 }
 
-/* Преимущества */
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -306,7 +312,6 @@ ul {
     color: #666;
 }
 
-/* Футер */
 .footer {
     background-color: #1a1a1a;
     color: #a0a0a0;
@@ -351,98 +356,221 @@ ul {
     opacity: 0;
     transform: translateY(40px);
     transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-    will-change: opacity, transform; /* Оптимизация производительности */
+    will-change: opacity, transform;
 }
 
-/* Конечное состояние: элементы возвращаются на свое место и становятся видимыми */
 .fade-in-bottom.visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-
 @media (max-width: 768px) {
     .section {
-        padding: 40px 0; /* Меньше пустых пространств на смартфонах */
+        padding: 40px 0;
     }
-    
+
+    .container {
+        padding: 0 20px;
+    }
+
     .header-top {
         flex-direction: column;
         text-align: center;
         padding: 15px 0;
+        gap: 10px;
     }
-    
+
+    .logo-area {
+        justify-content: center;
+    }
+
     .header-contacts {
         flex-direction: column;
         gap: 12px;
         width: 100%;
-    }
-    
-    .btn-callback {
-        width: 100%; /* Кнопка во всю ширину экрана */
-        max-width: 320px;
+        align-items: center;
     }
 
-    /* Мобильное меню: делаем его в виде горизонтального скролл-бара,
-       чтобы не занимать пол-экрана огромным списком */
+    .contact-item {
+        text-align: center;
+    }
+
+    .btn-callback {
+        width: 100%;
+        max-width: 320px;
+        padding: 14px 24px;
+        font-size: 15px;
+    }
+
+    .mobile-menu-toggle {
+        display: flex !important;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .mobile-menu-toggle span {
+        font-size: 16px;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+    .mobile-menu-toggle::after {
+        content: '☰';
+        font-size: 28px;
+        line-height: 1;
+    }
+    .mobile-menu-toggle.active::after {
+        content: '✕';
+    }
     .nav-list {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch; /* Плавный скролл на iOS */
-        scroll-snap-type: x mandatory;
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+    .nav-list.active {
+        display: flex !important;
     }
     .nav-list li {
-        flex-shrink: 0;
-        scroll-snap-align: start;
+        flex-grow: 0;
+        text-align: left;
+        border-bottom: 1px solid #333;
+    }
+    .nav-list li:last-child {
+        border-bottom: none;
     }
     .nav-list li a {
-        padding: 14px 18px;
-        white-space: nowrap; /* Текст не переносится, а уходит вбок */
+        padding: 16px 20px;
+        white-space: normal;
+        font-size: 15px;
+        text-align: left;
     }
 
-    /* Главный баннер */
     .hero {
-        padding: 60px 0;
+        padding: 50px 0;
         text-align: center;
+    }
+    .hero-content {
+        max-width: 100%;
     }
     .hero h2 {
         font-size: 28px;
+        line-height: 1.3;
+        margin-bottom: 16px;
     }
     .hero p {
         font-size: 16px;
+        margin-bottom: 24px;
+        line-height: 1.5;
     }
     .hero-buttons {
         flex-direction: column;
-        gap: 10px;
+        gap: 12px;
+        align-items: center;
     }
     .btn-primary, .btn-secondary {
-        width: 100%; /* Кнопки на весь экран */
+        width: 100%;
+        max-width: 320px;
+        padding: 14px 24px;
+        font-size: 15px;
     }
-    
-    /* Заголовки секций */
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .section-title {
+        margin-bottom: 30px;
+    }
     .section-title h3 {
         font-size: 24px;
     }
-    
-    /* Футер */
+
+    .service-card {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .service-img {
+        height: 220px;
+    }
+
+    .footer {
+        padding: 40px 0 20px;
+    }
     .footer-grid {
+        grid-template-columns: 1fr;
         text-align: center;
-        gap: 25px;
+        gap: 30px;
+    }
+    .footer-col ul {
+        text-align: center;
+    }
+    .footer-map-col iframe {
+        height: 250px;
     }
     .footer-bottom {
         flex-direction: column;
         text-align: center;
-        gap: 10px;
+        gap: 12px;
+    }
+    .footer-socials {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
     }
 }
 
 @media (max-width: 480px) {
-    /* Экстремально маленькие экраны */
-    .logo-area {
-        flex-direction: column;
-        gap: 5px;
+    .container {
+        padding: 0 16px;
+    }
+
+    .logo-text h1 {
+        font-size: 16px;
+    }
+    .logo-text p {
+        font-size: 11px;
+    }
+
+    .hero {
+        padding: 40px 0;
     }
     .hero h2 {
         font-size: 24px;
+    }
+    .hero p {
+        font-size: 15px;
+    }
+
+    .section {
+        padding: 35px 0;
+    }
+
+    .section-title h3 {
+        font-size: 22px;
+    }
+
+    .service-img {
+        height: 200px;
+    }
+
+    .service-info {
+        padding: 16px;
+    }
+
+    .service-info h4 {
+        font-size: 17px;
+    }
+
+    .feature-item {
+        padding: 20px;
+    }
+
+    .contact-item a {
+        font-size: 15px;
     }
 }

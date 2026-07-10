@@ -1,50 +1,29 @@
 document.addEventListener("DOMContentLoaded", () => {
     const animatedElements = document.querySelectorAll('.fade-in-bottom');
-    if (animatedElements.length === 0) return;
+    if (!animatedElements.length) return;
 
-    // 1. Сразу показываем элементы, которые находятся в верхней части страницы (первый экран)
-    animatedElements.forEach(element => {
-        const rect = element.getBoundingClientRect();
-        // Если верх элемента находится в пределах экрана при загрузке
-        if (rect.top < window.innerHeight) {
-            element.classList.add('visible');
+    animatedElements.forEach(el => {
+        if (el.getBoundingClientRect().top < window.innerHeight) {
+            el.classList.add('visible');
         }
     });
 
     let lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    const options = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
-
     const observer = new IntersectionObserver((entries) => {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
-        // Если скролл у самого верха, принудительно считаем направление как "вниз",
-        // чтобы верхние блоки не исчезали из-за погрешности расчетов
-        const isScrollingDown = scrollTop <= 0 ? true : scrollTop > lastScrollTop;
-        
+        const isScrollingDown = scrollTop <= 0 || scrollTop > lastScrollTop;
+
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Появляются только при скролле вниз
-                if (isScrollingDown) {
-                    entry.target.classList.add('visible');
-                }
-            } else {
-                // Сбрасываем анимацию ТОЛЬКО если скроллим вверх 
-                // И элемент ушел именно за НИЖНЮЮ границу экрана
-                if (!isScrollingDown && entry.boundingClientRect.top > 0) {
-                    entry.target.classList.remove('visible');
-                }
+            if (entry.isIntersecting && isScrollingDown) {
+                entry.target.classList.add('visible');
+            } else if (!isScrollingDown && entry.boundingClientRect.top > 0) {
+                entry.target.classList.remove('visible');
             }
         });
 
         lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-    }, options);
+    }, { threshold: 0.1 });
 
-    animatedElements.forEach(element => {
-        observer.observe(element);
-    });
+    animatedElements.forEach(el => observer.observe(el));
 });

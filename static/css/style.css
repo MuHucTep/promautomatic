@@ -1,8 +1,7 @@
 html {
-    scroll-behavior: smooth; /* Плавный скролл при переходе по якорям */
+    scroll-behavior: smooth;
 }
 
-/* Общие стили и сброс */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -14,25 +13,25 @@ body {
     color: #333;
     line-height: 1.6;
     background-color: #f9f9f9;
-    /* Улучшает рендеринг шрифтов на мобильных устройствах */
-    -webkit-font-smoothing: antialiased; 
+    -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 a {
     text-decoration: none;
     color: inherit;
 }
+
 ul {
     list-style: none;
 }
+
 .container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 16px; /* Чуть уменьшили для мобильных, чтобы сэкономить экран */
+    padding: 0 16px;
 }
 
-/* Шапка сайта */
 .header {
     background-color: #fff;
     border-bottom: 1px solid #eaeaea;
@@ -64,13 +63,12 @@ ul {
     font-weight: 700;
     font-size: 20px;
     border-radius: 4px;
-    flex-shrink: 0; /* Иконка не сожмется на узких экранах */
+    flex-shrink: 0;
 }
 .logo-text h1 {
     font-size: 18px;
     font-weight: 700;
     color: #222;
-    /* text-transform: uppercase; */
     letter-spacing: 0.5px;
     line-height: 1.2;
 }
@@ -82,7 +80,7 @@ ul {
     display: flex;
     gap: 24px;
     align-items: center;
-    flex-wrap: wrap; /* Позволяет контактам красиво переноситься */
+    flex-wrap: wrap;
 }
 .contact-item {
     font-size: 14px;
@@ -98,7 +96,7 @@ ul {
     color: #222;
     transition: color 0.2s;
     display: inline-block;
-    padding: 4px 0; /* Увеличиваем область клика */
+    padding: 4px 0;
 }
 .contact-item a:hover {
     color: #0056b3;
@@ -106,7 +104,7 @@ ul {
 .btn-callback {
     background-color: #0056b3;
     color: #fff;
-    padding: 12px 20px; /* Увеличена высота для удобства тапа */
+    padding: 12px 20px;
     border-radius: 4px;
     font-size: 14px;
     font-weight: 500;
@@ -118,7 +116,6 @@ ul {
     background-color: #004085;
 }
 
-/* Навигация */
 .nav-bar {
     background-color: #222;
     position: relative;
@@ -139,7 +136,7 @@ ul {
 }
 .nav-list {
     display: flex;
-    flex-wrap: wrap; /* Позволяет меню не ломать верстку на планшетах */
+    flex-wrap: wrap;
 }
 .nav-list li {
     flex-grow: 1;
@@ -147,7 +144,7 @@ ul {
 }
 .nav-list li a {
     display: block;
-    padding: 16px 20px; /* Идеальный размер для нажатия пальцем */
+    padding: 16px 20px;
     color: #ddd;
     font-size: 14px;
     font-weight: 500;
@@ -159,7 +156,6 @@ ul {
     color: #fff;
 }
 
-/* Главный баннер (Hero) */
 .hero {
     background: linear-gradient(rgba(0, 40, 85, 0.85), rgba(0, 20, 40, 0.9)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200') no-repeat center center/cover;
     color: #fff;
@@ -188,7 +184,7 @@ ul {
 }
 .btn-primary, .btn-secondary {
     display: inline-block;
-    padding: 14px 28px; /* Удобный размер для мобильных кнопок */
+    padding: 14px 28px;
     border-radius: 4px;
     font-weight: 500;
     text-align: center;
@@ -210,9 +206,8 @@ ul {
     color: #222;
 }
 
-/* Секции */
 .section {
-    padding: 60px 0; /* Чуть уменьшили вертикальные отступы на экранах по умолчанию */
+    padding: 60px 0;
 }
 .section-bg {
     background-color: #fff;
@@ -239,7 +234,6 @@ ul {
     background-color: #0056b3;
 }
 
-/* Сетка услуг */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -255,8 +249,6 @@ ul {
     flex-direction: column;
 }
 
-/* На мобильных устройствах ховер-эффект сдвига вверх (translateY) 
-   может дергаться при скролле пальцем, поэтому лучше оставить его для десктопов */
 @media (min-width: 769px) {
     .service-card:hover {
         transform: translateY(-5px);
@@ -295,10 +287,9 @@ ul {
     display: inline-flex;
     align-items: center;
     gap: 5px;
-    padding: 8px 0; /* Проще попасть пальцем */
+    padding: 8px 0;
 }
 
-/* Преимущества */
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -321,7 +312,6 @@ ul {
     color: #666;
 }
 
-/* Футер */
 .footer {
     background-color: #1a1a1a;
     color: #a0a0a0;
@@ -366,19 +356,17 @@ ul {
     opacity: 0;
     transform: translateY(40px);
     transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-    will-change: opacity, transform; /* Оптимизация производительности */
+    will-change: opacity, transform;
 }
 
-/* Конечное состояние: элементы возвращаются на свое место и становятся видимыми */
 .fade-in-bottom.visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-
 @media (max-width: 768px) {
     .section {
-        padding: 40px 0; /* Меньше пустых пространств на смартфонах */
+        padding: 40px 0;
     }
 
     .container {
@@ -408,13 +396,12 @@ ul {
     }
 
     .btn-callback {
-        width: 100%; /* Кнопка во всю ширину экрана */
+        width: 100%;
         max-width: 320px;
         padding: 14px 24px;
         font-size: 15px;
     }
 
-    /* Мобильное меню: вертикальный список с кнопкой-гамбургером */
     .mobile-menu-toggle {
         display: flex !important;
         justify-content: space-between;
@@ -456,7 +443,6 @@ ul {
         text-align: left;
     }
 
-    /* Главный баннер */
     .hero {
         padding: 50px 0;
         text-align: center;
@@ -486,7 +472,6 @@ ul {
         font-size: 15px;
     }
 
-    /* Сетки */
     .services-grid {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -497,7 +482,6 @@ ul {
         gap: 16px;
     }
 
-    /* Заголовки секций */
     .section-title {
         margin-bottom: 30px;
     }
@@ -505,7 +489,6 @@ ul {
         font-size: 24px;
     }
 
-    /* Карточки услуг */
     .service-card {
         max-width: 500px;
         margin: 0 auto;
@@ -515,7 +498,6 @@ ul {
         height: 220px;
     }
 
-    /* Футер */
     .footer {
         padding: 40px 0 20px;
     }
@@ -543,7 +525,6 @@ ul {
 }
 
 @media (max-width: 480px) {
-    /* Экстремально маленькие экраны */
     .container {
         padding: 0 16px;
     }
