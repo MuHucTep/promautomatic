@@ -121,6 +121,21 @@ ul {
 /* Навигация */
 .nav-bar {
     background-color: #222;
+    position: relative;
+}
+.mobile-menu-toggle {
+    display: none;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    padding: 16px 20px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+}
+.mobile-menu-toggle:hover {
+    background-color: #333;
 }
 .nav-list {
     display: flex;
@@ -227,7 +242,7 @@ ul {
 /* Сетка услуг */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 24px;
 }
 .service-card {
@@ -365,84 +380,216 @@ ul {
     .section {
         padding: 40px 0; /* Меньше пустых пространств на смартфонах */
     }
-    
+
+    .container {
+        padding: 0 20px;
+    }
+
     .header-top {
         flex-direction: column;
         text-align: center;
         padding: 15px 0;
+        gap: 10px;
     }
-    
+
+    .logo-area {
+        justify-content: center;
+    }
+
     .header-contacts {
         flex-direction: column;
         gap: 12px;
         width: 100%;
+        align-items: center;
     }
-    
+
+    .contact-item {
+        text-align: center;
+    }
+
     .btn-callback {
         width: 100%; /* Кнопка во всю ширину экрана */
         max-width: 320px;
+        padding: 14px 24px;
+        font-size: 15px;
     }
 
-    /* Мобильное меню: делаем его в виде горизонтального скролл-бара,
-       чтобы не занимать пол-экрана огромным списком */
+    /* Мобильное меню: вертикальный список с кнопкой-гамбургером */
+    .mobile-menu-toggle {
+        display: flex !important;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .mobile-menu-toggle span {
+        font-size: 16px;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+    .mobile-menu-toggle::after {
+        content: '☰';
+        font-size: 28px;
+        line-height: 1;
+    }
+    .mobile-menu-toggle.active::after {
+        content: '✕';
+    }
     .nav-list {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch; /* Плавный скролл на iOS */
-        scroll-snap-type: x mandatory;
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+    .nav-list.active {
+        display: flex !important;
     }
     .nav-list li {
-        flex-shrink: 0;
-        scroll-snap-align: start;
+        flex-grow: 0;
+        text-align: left;
+        border-bottom: 1px solid #333;
+    }
+    .nav-list li:last-child {
+        border-bottom: none;
     }
     .nav-list li a {
-        padding: 14px 18px;
-        white-space: nowrap; /* Текст не переносится, а уходит вбок */
+        padding: 16px 20px;
+        white-space: normal;
+        font-size: 15px;
+        text-align: left;
     }
 
     /* Главный баннер */
     .hero {
-        padding: 60px 0;
+        padding: 50px 0;
         text-align: center;
+    }
+    .hero-content {
+        max-width: 100%;
     }
     .hero h2 {
         font-size: 28px;
+        line-height: 1.3;
+        margin-bottom: 16px;
     }
     .hero p {
         font-size: 16px;
+        margin-bottom: 24px;
+        line-height: 1.5;
     }
     .hero-buttons {
         flex-direction: column;
-        gap: 10px;
+        gap: 12px;
+        align-items: center;
     }
     .btn-primary, .btn-secondary {
-        width: 100%; /* Кнопки на весь экран */
+        width: 100%;
+        max-width: 320px;
+        padding: 14px 24px;
+        font-size: 15px;
     }
-    
+
+    /* Сетки */
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
     /* Заголовки секций */
+    .section-title {
+        margin-bottom: 30px;
+    }
     .section-title h3 {
         font-size: 24px;
     }
-    
+
+    /* Карточки услуг */
+    .service-card {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .service-img {
+        height: 220px;
+    }
+
     /* Футер */
+    .footer {
+        padding: 40px 0 20px;
+    }
     .footer-grid {
+        grid-template-columns: 1fr;
         text-align: center;
-        gap: 25px;
+        gap: 30px;
+    }
+    .footer-col ul {
+        text-align: center;
+    }
+    .footer-map-col iframe {
+        height: 250px;
     }
     .footer-bottom {
         flex-direction: column;
         text-align: center;
-        gap: 10px;
+        gap: 12px;
+    }
+    .footer-socials {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
     }
 }
 
 @media (max-width: 480px) {
     /* Экстремально маленькие экраны */
-    .logo-area {
-        flex-direction: column;
-        gap: 5px;
+    .container {
+        padding: 0 16px;
+    }
+
+    .logo-text h1 {
+        font-size: 16px;
+    }
+    .logo-text p {
+        font-size: 11px;
+    }
+
+    .hero {
+        padding: 40px 0;
     }
     .hero h2 {
         font-size: 24px;
+    }
+    .hero p {
+        font-size: 15px;
+    }
+
+    .section {
+        padding: 35px 0;
+    }
+
+    .section-title h3 {
+        font-size: 22px;
+    }
+
+    .service-img {
+        height: 200px;
+    }
+
+    .service-info {
+        padding: 16px;
+    }
+
+    .service-info h4 {
+        font-size: 17px;
+    }
+
+    .feature-item {
+        padding: 20px;
+    }
+
+    .contact-item a {
+        font-size: 15px;
     }
 }
