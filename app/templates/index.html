@@ -127,7 +127,7 @@
                     <div class="service-card">
                         <div class="service-img">
                             {% if project.preview_image %}
-                                <img src="{{ project.preview_image }}" alt="{{ project.title }}" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                                <img src="{{ project.preview_image.url }}" alt="{{ project.title }}" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                             {% else %}
                                 <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=400" alt="{{ project.title }}" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                             {% endif %}
@@ -139,28 +139,6 @@
                         </div>
                     </div>
                     {% endfor %}
-                {% else %}
-                    <div class="service-card">
-                        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=400');"></div>
-                        <div class="service-info">
-                            <h4>Автоматизация производственной линии</h4>
-                            <p>Внедрение комплексной системы управления для крупного предприятия с высокой производительностью.</p>
-                        </div>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&q=80&w=400');"></div>
-                        <div class="service-info">
-                            <h4>Модернизация системы АСУ ТП</h4>
-                            <p>Обновление программного обеспечения и аппаратной части для повышения надежности и контроля.</p>
-                        </div>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=400');"></div>
-                        <div class="service-info">
-                            <h4>Интеграция роботизированных ячеек</h4>
-                            <p>Создание безопасных и эффективных ячеек для сборочных и упаковочных процессов.</p>
-                        </div>
-                    </div>
                 {% endif %}
             </div>
         </div>
