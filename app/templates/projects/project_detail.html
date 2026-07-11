@@ -52,6 +52,9 @@
                 <div class="project-detail-content">
                     {{ project.description }}
                 </div>
+                {% for image in project.project_images.all %}
+                    <img src="{{ image.image.url }}" alt="" class="project-detail-image">
+                {% endfor %}
             </div>
         </div>
     </section>
